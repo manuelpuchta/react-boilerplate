@@ -1,0 +1,37 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for React with ES6 using Webpack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manuelpuchta/react-boilerplate.git"
+  },
+  "keywords": [
+    "boilerplate",
+    "react",
+    "es6",
+    "webpack",
+    "babel",
+    "redux"
+  ],
+  "author": "Manuel Puchta (https://manuelpuchta.de)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manuelpuchta/react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/manuelpuchta/react-boilerplate#readme",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "webpack": "^2.5.1"
+  }
+}
