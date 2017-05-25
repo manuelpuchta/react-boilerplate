@@ -10,15 +10,21 @@ const config = {
   },
   module: {
     rules: [
-      {test: /\.(js|jsx)$/, use: 'babel-loader'}
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      }
     ]
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: false
-    }),
     new HtmlWebpackPlugin({template: './src/index.html'})
-  ]
+  ],
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 9000
+  }
 };
 
 module.exports = config;
