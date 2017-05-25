@@ -1,9 +1,32 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
+const nodeEnv = process.env.NODE_ENV || 'development';
+
+const plugins = [
+  new HtmlWebpackPlugin({
+    template: './src/index.html'
+  })
+];
+
+if (nodeEnv === 'development') {
+  plugins.push(
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false
+    })
+  );
+}
+
+if (nodeEnv === 'production') {
+
+}
+
 const config = {
-  entry: './src/app/index.js',
+  entry: ['babel-polyfill', './src/app/index.js'],
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
@@ -17,9 +40,8 @@ const config = {
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({template: './src/index.html'})
-  ],
+  // list of all plugins
+  plugins,
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
