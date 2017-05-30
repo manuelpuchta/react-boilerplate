@@ -29,17 +29,29 @@ const plugins = [
 const rules = [
   {
     test: /\.(js|jsx)$/,
+    include: path.resolve(__dirname, 'src'),
     exclude: /node_modules/,
-    use: 'babel-loader'
+    loader: 'babel-loader',
+    options: {
+      cacheDirectory: true // `babel-loader` caching
+    }
   },
   {
-    test: [/\.png$/, /\.svg$/, /\.jpe?g$/, /\.gif$/],
+    test: /(assets\/img\/)(.)+.((png)|(svg)|(jpe?g$)|(gif))$/, // loading images
     loader: 'url-loader',
     options: {
       limit: 10000, // assets smaller than those bytes are served as data URLs
       outputPath: 'static/media/',
-      name: '[name].[hash:8].[ext]',
+      name: '[name].[hash:8].[ext]'
     },
+  },
+  {
+    test: /(assets\/fonts\/)(.)+.((woff)|(woff2)|(eot)|(ttf)|(otf)|(svg))$/, // loading fonts
+    loader: 'file-loader',
+    options: {
+      outputPath: 'static/media/',
+      name: '[name].[hash:8].[ext]',
+    }
   }
 ];
 
@@ -119,6 +131,8 @@ const config = {
   output: {
     // the filename template for entry chunks
     filename: 'bundle.js',
+    // name of on-demand loaded chunk files
+    chunkFilename: '[name].chunk.js',
     // the target directory for all output files
     // must be an absolute path (use the Node.js path module)
     path: isDevelopment ? path.resolve(__dirname, 'public') : path.resolve(__dirname, 'build')
