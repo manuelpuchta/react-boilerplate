@@ -15,10 +15,11 @@ const extractSass = new ExtractTextPlugin({
 });
 
 const plugins = [
+  new webpack.NamedModulesPlugin(),
   new HtmlWebpackPlugin({
+    inject: true,
     template: './public/index.html'
   }),
-  extractSass,
   new webpack.DefinePlugin({
     'process.env': {
       NODE_ENV: JSON.stringify(nodeEnv)
@@ -29,7 +30,6 @@ const plugins = [
 const rules = [
   {
     test: /\.(js|jsx)$/,
-    include: path.resolve(__dirname, 'src'),
     exclude: /node_modules/,
     loader: 'babel-loader',
     options: {
@@ -57,36 +57,33 @@ const rules = [
 
 if (isDevelopment) {
   plugins.push(
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'static',
-      openAnalyzer: false
-    })
+    new webpack.HotModuleReplacementPlugin()
+    // new BundleAnalyzerPlugin({
+    //   analyzerMode: 'static',
+    //   openAnalyzer: false
+    // })
   );
 
   rules.push(
     {
       test: /\.scss$/,
-      use: extractSass.extract({
-        use: [{
-          loader: 'css-loader', // translates CSS into CommonJS
-          options: {
-            sourceMap: true
-          }
-        }, {
-          loader: 'postcss-loader', // used for autoprefixing
-          options: {
-            sourceMap: true,
-            plugins: () => {
-              return [autoprefixer(autoprefixerBrowserslist)]
-            }
-          }
-        }, {
-          loader: 'sass-loader', // compiles Sass to CSS
-          options: {
-            sourceMap: true
-          }
-        }]
-      })
+      exclude: /node_modules/,
+      use: [{
+        loader: "style-loader", // creates style nodes from JS strings
+        options: {
+          sourceMap: true
+        }
+      }, {
+        loader: "css-loader", // translates CSS into CommonJS
+        options: {
+          sourceMap: true
+        }
+      }, {
+        loader: "sass-loader", // compiles Sass to CSS
+        options: {
+          sourceMap: true
+        }
+      }]
     }
   );
 } else {
@@ -94,7 +91,8 @@ if (isDevelopment) {
     new CleanWebpackPlugin('build'),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: false
-    })
+    }),
+    extractSass
   );
 
   rules.push(
@@ -145,8 +143,20 @@ const config = {
   plugins,
   // devServer configuration
   devServer: {
+    // Tell the server where to serve content from
     contentBase: path.join(__dirname, 'public'),
+    // Inline mode is recommended when using Hot Module Replacement.
+    inline: isDevelopment,
+    // hot module replacement. Depends on HotModuleReplacementPlugin
+    hot: isDevelopment,
+    // For some systems, watching many file systems can result in a lot of CPU or memory usage.
+    // It is possible to exclude a huge folder like node_modules
+    watchOptions: {
+      ignored: /node_modules/,
+    },
+    // Enable gzip compression for everything served
     compress: true,
+    // Specify a port number to listen for requests on
     port: 3000
   }
 };
