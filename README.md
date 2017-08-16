@@ -1,2 +1,7 @@
 # react-boilerplate
-Boilerplate for React with ES6 using Webpack.
+
+Minimal ES6 boilerplate with React using webpack compiler.
+
+```bash
+npm start
+```
