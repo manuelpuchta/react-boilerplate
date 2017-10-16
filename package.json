@@ -17,8 +17,7 @@
     "react",
     "es6",
     "webpack",
-    "babel",
-    "redux"
+    "babel"
   ],
   "author": "Manuel Puchta (https://manuelpuchta.de)",
   "license": "MIT",
