@@ -2,4 +2,3 @@
 .DS_STORE
 node_modules
 build
-public/report.html
