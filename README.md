@@ -2,14 +2,10 @@
 
 Minimal ES6 boilerplate with React using webpack compiler.
 
-## Local development with webpack-dev-server
-
 ```bash
+# local development
 npm start
-```
 
-## Create a production ready version with webpack
-
-```bash
+# create a build
 npm run build
 ```
