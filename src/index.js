@@ -1,15 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const style = {
-  fontFamily: 'sans-serif',
-  fontSize: '5vw',
-  textAlign: 'center'
-};
+class HelloMessage extends React.Component {
+  render() {
+    const style = {
+      fontFamily: 'sans-serif',
+      fontSize: '5vw',
+      textAlign: 'center'
+    };
+
+    return <h1 style={style}>Hello {this.props.name}</h1>;
+  }
+}
 
 ReactDOM.render(
-  <div style={style}>
-    <h1>Hello, world!</h1>
-  </div>,
+  <HelloMessage name="World" />,
   document.getElementById('root')
 );
