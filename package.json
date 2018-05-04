@@ -1,6 +1,6 @@
 {
   "name": "react-boilerplate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Minimal ES6 boilerplate with React using webpack compiler.",
   "main": "index.js",
   "scripts": {
