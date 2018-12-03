@@ -26,5 +26,18 @@
   "bugs": {
     "url": "https://github.com/manuelpuchta/react-boilerplate/issues"
   },
-  "homepage": "https://github.com/manuelpuchta/react-boilerplate#readme"
+  "homepage": "https://github.com/manuelpuchta/react-boilerplate#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0",
+    "babel-plugin-styled-components": "^1.9.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^5.1.1",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "styled-components": "^4.1.2",
+    "styled-normalize": "^8.0.4"
+  }
 }
