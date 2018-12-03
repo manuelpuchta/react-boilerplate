@@ -1,8 +1,8 @@
 # react-boilerplate
 
-Minimal ES6 boilerplate with React 16.3.2 using webpack compiler.
+Minimal ES6 boilerplate with [React](https://reactjs.org/), [Redux](https://redux.js.org/) and [styled components](https://www.styled-components.com/) using webpack compiler.
 
-> You should manage your node versions with [nvm](https://github.com/creationix/nvm)
+> You should manage your node versions with [nvm](https://github.com/creationix/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)
 
 ```bash
 # install all dependencies once
