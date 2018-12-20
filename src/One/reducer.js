@@ -1,4 +1,4 @@
-import { DEMO_ONE_UP } from './constants';
+import { ONE_UP, ONE_DOWN } from './constants';
 
 const initialState = {
   value: 0,
@@ -7,7 +7,8 @@ const initialState = {
 export default (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
-    case DEMO_ONE_UP: {
+    case ONE_UP:
+    case ONE_DOWN: {
       return { ...state, ...payload };
     }
   }
