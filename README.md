@@ -1,6 +1,6 @@
 # react-boilerplate
 
-Minimal ES6 boilerplate with [React](https://reactjs.org/), [Redux](https://redux.js.org/) and [styled components](https://www.styled-components.com/) using webpack compiler.
+Minimal boilerplate with [React](https://reactjs.org/), [Redux](https://redux.js.org/) and [styled-components](https://www.styled-components.com/) using [webpack](https://webpack.js.org/) compiler.
 
 > You should manage your node versions with [nvm](https://github.com/creationix/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows)
 
@@ -8,8 +8,11 @@ Minimal ES6 boilerplate with [React](https://reactjs.org/), [Redux](https://redu
 # install all dependencies once
 nvm install && npm install
 
-# local development
+# local development http://localhost:3000
 npm start
+
+# test
+npm test
 
 # create a build
 npm run build

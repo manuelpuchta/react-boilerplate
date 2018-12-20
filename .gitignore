@@ -1,4 +1,8 @@
-.idea
-.DS_STORE
-node_modules
-dist
+.idea/
+.vscode/
+node_modules/
+.DS_Store
+npm-debug.log
+coverage
+report.xml
+reports/

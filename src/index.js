@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Demo from 'Demo';
 
-ReactDOM.render(
-  <h1>Hello, world!</h1>,
-  document.getElementById('root')
-);
+const root = document.createElement('div');
+document.body.appendChild(root);
+ReactDOM.render(<Demo />, root);
