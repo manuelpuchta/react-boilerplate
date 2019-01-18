@@ -17,3 +17,9 @@ npm test
 # create a build
 npm run build
 ```
+
+## Useful links and notes
+
+- How to structure your React app? Have a look at the React [FAQs](https://reactjs.org/docs/faq-structure.html). I would recommend to structure your app by features - grouped by feature (Styles, JS, Tests, also assets - if possible) - is it a huge feature? Create a new root folder for that feature.
+- Write tests, this boilerplate comes with a basic [Jest](https://jestjs.io/) setup.
+- Make yourself familiar with [React](https://reactjs.org/), [Redux](https://redux.js.org/) and [styled-components](https://www.styled-components.com/) - the live editor examples are really helpful.
