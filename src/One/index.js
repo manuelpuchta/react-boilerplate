@@ -15,26 +15,20 @@ class One extends React.Component {
     decreaseValue: PropTypes.func,
   };
 
-  constructor(props) {
-    super(props);
-    this.upHandler = this.upHandler.bind(this);
-    this.downHandler = this.downHandler.bind(this);
-  }
-
-  upHandler() {
+  upHandler = () => {
     this.props.incrementValue();
-  }
+  };
 
-  downHandler() {
+  downHandler = () => {
     this.props.decreaseValue();
-  }
+  };
 
   render() {
     const { value } = this.props;
 
     return (
       <Container>
-        <button onClick={() => this.upHandler()}>value + 1</button> OR <button onClick={() => this.downHandler()}>value - 1</button>
+        <button onClick={this.upHandler}>value + 1</button> OR <button onClick={this.downHandler}>value - 1</button>
         <br />
         <br />
         <div>Current value: {value}</div>
