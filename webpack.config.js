@@ -39,7 +39,7 @@ if (isProduction) {
 }
 
 module.exports = {
-  devtool: isDevelopment ? 'cheap-module-inline-source-map' : false,
+  devtool: isDevelopment ? 'cheap-module-inline-source-map' : 'source-map',
   mode: mode,
   entry: { main: ['@babel/polyfill', './src/index.js'] },
   output: output,
