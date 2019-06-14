@@ -5,17 +5,23 @@ Minimal boilerplate with [React](https://reactjs.org/), [Redux](https://redux.js
 > You should manage your node versions with [nvm](https://github.com/creationix/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows) (Note: make sure to update your nvm-windows to v1.1.7, which fixes npm cli download URL)
 
 ```bash
-# install all dependencies once
-nvm install && npm install
+# install the correct node version
+nvm install
+
+# or install 10.16.0 LTS directly
+nvm install 10.16.0
+
+# install all project dependencies one
+yarn
 
 # local development http://localhost:3000
-npm start
+yarn start
 
 # test
-npm test
+yarn test
 
 # create a build
-npm run build
+yarn build
 ```
 
 ## Useful links and notes
