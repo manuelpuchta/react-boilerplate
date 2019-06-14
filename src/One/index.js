@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { incrementValue, decreaseValue } from './actions';
+import getRandomOneValue from './getRandomOneValue';
 
 const Container = styled.div`
   text-align: center;
@@ -10,9 +11,10 @@ const Container = styled.div`
 
 class One extends React.Component {
   static propTypes = {
-    value: PropTypes.number,
-    incrementValue: PropTypes.func,
     decreaseValue: PropTypes.func,
+    randomValue: PropTypes.number.isRequired,
+    incrementValue: PropTypes.func,
+    value: PropTypes.number.isRequired,
   };
 
   upHandler = () => {
@@ -24,7 +26,7 @@ class One extends React.Component {
   };
 
   render() {
-    const { value } = this.props;
+    const { value, randomValue } = this.props;
 
     return (
       <Container>
@@ -32,6 +34,7 @@ class One extends React.Component {
         <br />
         <br />
         <div>Current value: {value}</div>
+        <div>Random value by selector: {randomValue}</div>
       </Container>
     );
   }
@@ -39,6 +42,7 @@ class One extends React.Component {
 
 const mapStateToProps = state => ({
   value: state.one.value,
+  randomValue: getRandomOneValue(state),
 });
 
 export default connect(
