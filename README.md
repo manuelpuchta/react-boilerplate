@@ -28,6 +28,9 @@ yarn add --dev react
 
 # remove a dependency
 yarn remove react
+
+# update a package
+yarn upgrade react
 ```
 
 ## Development
