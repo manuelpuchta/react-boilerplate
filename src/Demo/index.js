@@ -15,6 +15,7 @@ const Container = styled.div`
 
 const Headline = styled.h1`
   text-align: center;
+  color: red;
 `;
 
 const Demo = () => (
