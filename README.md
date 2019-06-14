@@ -17,7 +17,7 @@ yarn
 
 _Adding new project dependencies_
 
-Please use yarn for package management, e.g.:
+Please use [yarn](https://yarnpkg.com/) for package management, e.g.:
 
 ```sh
 # adding a new dependency (package.json > dependencies)
