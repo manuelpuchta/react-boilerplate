@@ -1,6 +1,6 @@
 const collectCoverageFrom = ['src/**/*.js'];
 const jest = {
-  setupTestFrameworkScriptFile: './jest.setup.js',
+  setupFilesAfterEnv: ['./jest.setup.js'],
   collectCoverageFrom,
 };
 
