@@ -6,9 +6,11 @@ import One from 'One';
 
 const Container = styled.div`
   font-family: monospace;
-  margin: 60px auto;
+  margin: 60px 32px;
+  padding: 25px;
   text-align: center;
   color: ${colors.black};
+  background: azure;
 `;
 
 const Headline = styled.h1`
