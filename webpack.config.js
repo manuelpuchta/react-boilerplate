@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 const isDevelopment = nodeEnv === 'development';
@@ -30,7 +30,7 @@ if (isDevelopment) {
 }
 
 if (isProduction) {
-  plugins.push(new CleanWebpackPlugin(['dist']));
+  plugins.push(new CleanWebpackPlugin({ verbose: true }));
   output = {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'dist'),
