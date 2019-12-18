@@ -5,12 +5,12 @@ import GlobalStyle, { colors } from 'styles';
 import One from 'One';
 
 const Container = styled.div`
-  font-family: monospace;
-  margin: 60px 32px;
-  padding: 25px;
+  font-family: sans-serif;
+  margin: 4em 2em;
+  padding: 1.5em;
   text-align: center;
   color: ${colors.black};
-  background: azure;
+  background: ${colors.green.a};
 `;
 
 const Headline = styled.h1`
