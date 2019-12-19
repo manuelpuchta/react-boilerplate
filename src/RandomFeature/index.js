@@ -5,12 +5,17 @@ import { Container, Button } from './styles';
 import { incrementValue, decreaseValue } from './actions';
 import getRandomValue from './getRandomValue';
 
-class RandomFeature extends React.Component {
+export class RandomFeature extends React.Component {
   static propTypes = {
     decreaseValue: PropTypes.func,
     randomValue: PropTypes.number.isRequired,
     incrementValue: PropTypes.func,
     value: PropTypes.number.isRequired,
+  };
+
+  static defaultProps = {
+    randomValue: 13,
+    value: 1,
   };
 
   upHandler = () => {
@@ -26,7 +31,13 @@ class RandomFeature extends React.Component {
 
     return (
       <Container>
-        <Button onClick={this.upHandler}>value + 1</Button> OR <Button onClick={this.downHandler}>value - 1</Button>
+        <Button onClick={this.upHandler} up>
+          value + 1
+        </Button>{' '}
+        OR{' '}
+        <Button onClick={this.downHandler} down>
+          value - 1
+        </Button>
         <p>Current value: {value}</p>
         <i>
           Random value from <code>getRandomValue</code> selector: {randomValue}
