@@ -9,22 +9,17 @@
   "scripts": {
     "start": "node node_modules/cross-env/src/bin/cross-env.js NODE_ENV=development webpack-dev-server",
     "build": "node node_modules/cross-env/src/bin/cross-env.js NODE_ENV=production webpack",
-    "pre-commit": "node node_modules/lint-staged",
-    "test": "node node_modules/cross-env/src/bin/cross-env.js NODE_ENV=test jest"
+    "test": "node node_modules/cross-env/src/bin/cross-env.js NODE_ENV=test jest",
+    "lint": "node node_modules/eslint/bin/eslint --fix ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run pre-commit",
-      "pre-push": "npm test"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.js": [
       "node node_modules/eslint/bin/eslint --fix",
-      "git add"
-    ],
-    "*.{json,md,scss}": [
-      "node node_modules/prettier/bin-prettier.js --write",
       "git add"
     ]
   },
