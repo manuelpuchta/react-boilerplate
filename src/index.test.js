@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import App from './index';
 import { mount } from 'enzyme';
+import App from './index';
 
 describe('App test (root Component).', () => {
   it('Should mount correctly', () => {
