@@ -4,14 +4,12 @@ import styledNormalize from 'styled-normalize';
 export const colors = {
   black: '#000000',
   green: {
-    a: '#00ff692b',
-    b: '#00ff6996',
-    c: '#00ff69',
+    '25': 'rgba(0, 255, 105, 0.25)',
+    '55': 'rgba(0, 255, 105, 0.55)',
+    '100': 'rgba(0, 255, 105, 1)',
   },
 };
 
-const GlobalStyle = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
 `;
-
-export default GlobalStyle;

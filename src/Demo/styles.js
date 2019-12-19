@@ -7,7 +7,7 @@ export const Container = styled.div`
   padding: 1.5em;
   text-align: center;
   color: ${colors.black};
-  background: ${colors.green.a};
+  background: ${colors.green['25']};
 `;
 
 export const Headline = styled.h1`
