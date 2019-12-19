@@ -21,7 +21,8 @@
     "prefer-const": 2,
     "prefer-promise-reject-errors": 2,
     "prettier/prettier": 2,
-    "strict": [2, "global"]
+    "strict": [2, "global"],
+    "no-console": 2
   },
   "settings": {
     "react": {

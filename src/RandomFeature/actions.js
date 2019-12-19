@@ -2,7 +2,7 @@ import { ONE_UP, ONE_DOWN } from './constants';
 
 export function incrementValue() {
   return (dispatch, getState) => {
-    const { value } = getState().one;
+    const { value } = getState().randomFeature;
     const payload = value + 1;
 
     dispatch({
@@ -14,7 +14,7 @@ export function incrementValue() {
 
 export function decreaseValue() {
   return (dispatch, getState) => {
-    const { value } = getState().one;
+    const { value } = getState().randomFeature;
     const payload = value - 1;
 
     dispatch({

@@ -1,3 +1,5 @@
-describe('Jest', () => {
-  test('React boilerplate - a test with no expectation', () => {});
+describe('React boilerplate', () => {
+  test('true should be defined.', () => {
+    expect(true).toBeDefined();
+  });
 });

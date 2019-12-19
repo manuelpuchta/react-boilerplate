@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import one from 'One/reducer';
+import randomFeature from 'RandomFeature/reducer';
 
 const reducers = combineReducers({
-  one,
+  randomFeature,
 });
 
 export default reducers;
