@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Container, Button } from './styles';
 import { incrementValue, decreaseValue } from './actions';
 import getRandomValue from './getRandomValue';
 
-export class RandomFeature extends React.Component {
+export class RandomFeature extends Component {
   static propTypes = {
     decreaseValue: PropTypes.func,
     randomValue: PropTypes.number.isRequired,
@@ -31,6 +31,12 @@ export class RandomFeature extends React.Component {
 
     return (
       <Container>
+        <h2>
+          <a href="https://redux.js.org/" title={'Redux website'}>
+            Redux
+          </a>{' '}
+          state example
+        </h2>
         <Button onClick={this.upHandler} up>
           value + 1
         </Button>{' '}
