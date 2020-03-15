@@ -8,8 +8,8 @@ Minimal boilerplate with [React](https://reactjs.org/), [Redux](https://redux.js
 # install the correct node version via nvm
 nvm install
 
-# or install v12.14.0 LTS directly
-nvm install 12.14.0
+# or install v12.16.1 LTS directly
+nvm install 12.16.1
 
 # install all project dependencies one
 yarn
