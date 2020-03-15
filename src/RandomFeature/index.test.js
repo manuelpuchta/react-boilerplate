@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import { RandomFeature } from './index';
-import { Button } from './styles';
+import { Button } from '../styles';
 import randomFeature from './reducer';
 import { incrementValue, decreaseValue } from './actions';
 import { ONE_UP, ONE_DOWN } from './constants';

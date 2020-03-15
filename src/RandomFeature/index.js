@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Container, Button } from './styles';
+import { Container } from './styles';
+import { Button } from '../styles';
 import { incrementValue, decreaseValue } from './actions';
 import getRandomValue from './getRandomValue';
 
 export class RandomFeature extends Component {
   static propTypes = {
+    anotherRandomProp: PropTypes.string,
     decreaseValue: PropTypes.func,
     randomValue: PropTypes.number.isRequired,
     incrementValue: PropTypes.func,
@@ -14,6 +16,7 @@ export class RandomFeature extends Component {
   };
 
   static defaultProps = {
+    anotherRandomProp: 'H3llo w0rld!',
     randomValue: 13,
     value: 1,
   };
@@ -27,7 +30,7 @@ export class RandomFeature extends Component {
   };
 
   render() {
-    const { value, randomValue } = this.props;
+    const { anotherRandomProp, value, randomValue } = this.props;
 
     return (
       <Container>
@@ -37,6 +40,7 @@ export class RandomFeature extends Component {
           </a>{' '}
           state example
         </h2>
+        <p>{anotherRandomProp}</p>
         <Button onClick={this.upHandler} up>
           value + 1
         </Button>{' '}
