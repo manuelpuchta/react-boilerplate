@@ -11,7 +11,9 @@ const Demo = () => (
     <Headline>React boilerplate</Headline>
     <p>Hi, nice to meet you!</p>
     <RandomFeature
-      anotherRandomProp={'Redux helps you to control and centralize your applications state in a huge scalable way.'}
+      anotherRandomProp={
+        'Redux helps you to control and centralize your applications state in a huge scalable way.'
+      }
     />
     <RandomHooksFeature
       randomProp={

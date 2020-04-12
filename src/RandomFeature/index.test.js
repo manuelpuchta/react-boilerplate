@@ -42,7 +42,9 @@ describe('RandomFeature Component test.', () => {
 
   test('Click handler executions work as expected', () => {
     const mockOnClick = jest.fn();
-    const wrapper = shallow(<RandomFeature incrementValue={mockOnClick} decreaseValue={mockOnClick} />);
+    const wrapper = shallow(
+      <RandomFeature incrementValue={mockOnClick} decreaseValue={mockOnClick} />,
+    );
 
     expect(wrapper.find(Button)).toHaveLength(2);
 
