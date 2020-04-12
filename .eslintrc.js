@@ -1,18 +1,5 @@
 module.exports = {
   parser: 'babel-eslint',
-  env: {
-    browser: true,
-    node: true,
-    'jest/globals': true,
-    es6: true,
-  },
-  plugins: ['jest', 'prettier', 'react'],
-  extends: [
-    'eslint:recommended',
-    'plugin:jest/recommended',
-    'plugin:react/recommended',
-    'prettier',
-  ],
   parserOptions: {
     ecmaVersion: 8,
     sourceType: 'module',
@@ -21,13 +8,23 @@ module.exports = {
       jsx: true,
     },
   },
+  env: {
+    browser: true,
+    node: true,
+    'jest/globals': true,
+    es6: true,
+  },
+  plugins: ['jest', 'react', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:jest/recommended',
+    'plugin:react/recommended',
+    'prettier',
+  ],
   rules: {
-    'prefer-arrow-callback': 'error',
-    'prefer-const': 'error',
-    'prefer-promise-reject-errors': 'error',
     'prettier/prettier': 'error',
-    strict: ['error', 'global'],
     'no-console': 'error',
+    'no-debugger': 'error',
   },
   settings: {
     react: {
