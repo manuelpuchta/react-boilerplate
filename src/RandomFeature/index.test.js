@@ -49,17 +49,11 @@ describe('RandomFeature Component test.', () => {
     expect(wrapper.find(Button)).toHaveLength(2);
 
     // up button
-    wrapper
-      .find(Button)
-      .filter({ up: true })
-      .simulate('click');
+    wrapper.find(Button).filter({ up: true }).simulate('click');
     expect(mockOnClick.mock.calls.length).toEqual(1);
 
     // down button
-    wrapper
-      .find(Button)
-      .filter({ down: true })
-      .simulate('click');
+    wrapper.find(Button).filter({ down: true }).simulate('click');
     expect(mockOnClick.mock.calls.length).toEqual(2);
   });
 
