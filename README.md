@@ -35,5 +35,4 @@ npm build
 - Good additional read: [Best practices for building a large scale react application](https://buttercms.com/blog/best-practices-for-building-a-large-scale-react-application)
 - Write tests, this boilerplate comes with a basic [Jest](https://jestjs.io/) setup.
 - Make yourself familiar with [React](https://reactjs.org/), [Redux](https://redux.js.org/) and [styled-components](https://www.styled-components.com/) - the live editor examples are really helpful.
-- On each commit [`husky`](https://github.com/typicode/husky) runs [eslint](https://eslint.org/) (with configured [prettier](https://prettier.io/) plugin).
-- On each push `husky` executes `npm test`.
+- On each commit [`husky`](https://github.com/typicode/husky) runs [eslint](https://eslint.org/) (with configured [prettier](https://prettier.io/) plugin) and tests `npm test`.
