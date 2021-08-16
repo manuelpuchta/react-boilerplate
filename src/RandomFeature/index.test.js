@@ -43,7 +43,10 @@ describe('RandomFeature Component test.', () => {
   test('Click handler executions work as expected', () => {
     const mockOnClick = jest.fn();
     const wrapper = shallow(
-      <RandomFeature incrementValue={mockOnClick} decreaseValue={mockOnClick} />,
+      <RandomFeature
+        incrementValue={mockOnClick}
+        decreaseValue={mockOnClick}
+      />,
     );
 
     expect(wrapper.find(Button)).toHaveLength(2);
@@ -60,7 +63,9 @@ describe('RandomFeature Component test.', () => {
   it('Reducer state init and updates are working', () => {
     const actionWithoutPayload = { type: ONE_UP };
     const initialState = { value: 0 };
-    expect(randomFeature(undefined, actionWithoutPayload)).toEqual(initialState);
+    expect(randomFeature(undefined, actionWithoutPayload)).toEqual(
+      initialState,
+    );
 
     const actionWithPayload = { type: ONE_UP, payload: { value: 5 } };
     const expectedState = { value: 5 };

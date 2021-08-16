@@ -8,7 +8,10 @@ const RandomHooksFeature = ({ randomProp }) => {
   return (
     <>
       <h2>
-        <a href="https://reactjs.org/docs/hooks-intro.html" title={'React hooks docs'}>
+        <a
+          href="https://reactjs.org/docs/hooks-intro.html"
+          title={'React hooks docs'}
+        >
           React Hooks
         </a>{' '}
         example
