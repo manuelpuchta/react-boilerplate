@@ -11,10 +11,16 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    'jest/globals': true,
     es6: true,
   },
-  plugins: ['react', 'prettier'],
-  extends: ['eslint:recommended', 'plugin:react/recommended', 'prettier'],
+  plugins: ['jest', 'react', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:jest/recommended',
+    'plugin:react/recommended',
+    'prettier',
+  ],
   rules: {
     'prettier/prettier': 'error',
     'no-console': 'error',

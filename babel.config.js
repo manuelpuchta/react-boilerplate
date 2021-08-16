@@ -11,7 +11,7 @@ module.exports = {
     },
     test: {
       presets: ['@babel/preset-env', '@babel/preset-react'],
-      plugins: ['react-refresh/babel', 'styled-components'],
+      plugins: ['styled-components'],
     },
   },
 };
