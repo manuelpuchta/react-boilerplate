@@ -1,5 +1,5 @@
 module.exports = {
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaVersion: 8,
     sourceType: 'module',
@@ -11,16 +11,10 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    'jest/globals': true,
     es6: true,
   },
-  plugins: ['jest', 'react', 'prettier'],
-  extends: [
-    'eslint:recommended',
-    'plugin:jest/recommended',
-    'plugin:react/recommended',
-    'prettier',
-  ],
+  plugins: ['react', 'prettier'],
+  extends: ['eslint:recommended', 'plugin:react/recommended', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
     'no-console': 'error',
@@ -28,7 +22,7 @@ module.exports = {
   },
   settings: {
     react: {
-      version: '16.13.1',
+      version: '17.0.2',
     },
   },
 };

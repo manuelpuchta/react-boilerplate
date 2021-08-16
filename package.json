@@ -11,7 +11,7 @@
     "build": "NODE_ENV=production webpack",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "lint": "eslint --fix ."
+    "lint": "eslint '*/**/*.js'"
   },
   "repository": {
     "type": "git",
@@ -44,12 +44,19 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
+    "@babel/eslint-parser": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "html-webpack-plugin": "^5.3.2",
+    "prettier": "^2.3.2",
     "react-refresh": "^0.10.0",
     "webpack": "^5.50.0",
     "webpack-cli": "^4.8.0",
