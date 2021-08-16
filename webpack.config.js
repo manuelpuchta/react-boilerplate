@@ -2,14 +2,14 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const nodeEnv = process.env.NODE_ENV || 'development';
-const isDevelopment = nodeEnv === 'development';
-const isProduction = nodeEnv === 'production';
+const isDevelopment = nodeEnv !== 'production';
 
 const mode = isDevelopment ? 'development' : 'production';
 let output = {
-  filename: '[name].[hash].js',
+  filename: '[name].[chunkhash].js',
   path: path.resolve(__dirname, 'dist'),
 };
 const plugins = [
@@ -26,22 +26,23 @@ const plugins = [
 ];
 
 if (isDevelopment) {
-  plugins.push(new webpack.HotModuleReplacementPlugin());
-}
-
-if (isProduction) {
+  plugins.push(
+    new webpack.HotModuleReplacementPlugin(),
+    new ReactRefreshWebpackPlugin()
+  );
+} else {
   plugins.push(new CleanWebpackPlugin({ verbose: true }));
   output = {
-    filename: '[name].[hash].js',
+    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist'),
     globalObject: 'this',
   };
 }
 
 module.exports = {
-  devtool: isDevelopment ? 'cheap-module-inline-source-map' : 'source-map',
+  devtool: isDevelopment ? 'inline-cheap-module-source-map' : 'source-map',
   mode: mode,
-  entry: { main: ['@babel/polyfill', './src/index.js'] },
+  entry: { main: ['./src/index.js'] },
   output: output,
   resolve: {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
@@ -63,7 +64,6 @@ module.exports = {
     compress: true,
     port: 3000,
     hot: isDevelopment,
-    host: '0.0.0.0',
     disableHostCheck: true,
   },
 };
