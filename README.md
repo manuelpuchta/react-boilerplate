@@ -2,50 +2,31 @@
 
 Minimal boilerplate with [React](https://reactjs.org/), [Redux](https://redux.js.org/) and [styled-components](https://www.styled-components.com/) using [webpack](https://webpack.js.org/) compiler.
 
-> You should manage your node versions with [nvm](https://github.com/creationix/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows) (Note: make sure to update your nvm-windows to v1.1.7, which fixes npm cli download URL issues)
+> You should manage your node versions with [nvm](https://github.com/creationix/nvm) or [n](https://github.com/tj/n)
 
 ```sh
-# install the correct node version via nvm
-nvm install
-
-# or install v12.16.1 LTS directly
-nvm install 12.16.1
+# use / install projects node version with nvm
+nvm use
+# or n
+n auto
 
 # install all project dependencies one
-yarn
-```
-
-_Adding new project dependencies_
-
-Please use [yarn](https://yarnpkg.com/) for package management, e.g.:
-
-```sh
-# adding a new dependency (package.json > dependencies)
-yarn add react
-
-# adding a new development dependency (package.json > devDependencies)
-yarn add --dev react
-
-# remove a dependency
-yarn remove react
-
-# update a package
-yarn upgrade react
+npm i
 ```
 
 ## Development
 
 ```sh
 # start local development
-yarn start
+npm start
 
 # run tests (Jest)
-yarn test
+npm test
 # or run with watch mode
-yarn test:watch
+npm test:watch
 
 # create a build
-yarn build
+npm build
 ```
 
 ## Useful links and notes
