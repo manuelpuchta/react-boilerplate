@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 
-import randomFeature from 'RandomFeature/reducer';
+import randomFeature from './RandomFeature/reducer';
 
 const reducers = combineReducers({
   randomFeature,

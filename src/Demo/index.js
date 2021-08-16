@@ -1,7 +1,7 @@
 import React from 'react';
-import { GlobalStyle } from 'styles';
+import { GlobalStyle } from '../styles';
 import { Container, Headline } from './styles';
-import RandomFeature from 'RandomFeature';
+import RandomFeature from '../RandomFeature';
 import RandomHooksFeature from '../RandomHooksFeature';
 
 const Demo = () => (
