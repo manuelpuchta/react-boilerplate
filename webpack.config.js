@@ -26,10 +26,7 @@ const plugins = [
 ];
 
 if (isDevelopment) {
-  plugins.push(
-    new webpack.HotModuleReplacementPlugin(),
-    new ReactRefreshWebpackPlugin()
-  );
+  plugins.push(new webpack.HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin());
 } else {
   plugins.push(new CleanWebpackPlugin({ verbose: true }));
   output = {

@@ -57,7 +57,7 @@ export class RandomFeature extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   value: state.randomFeature.value,
   randomValue: getRandomValue(state),
 });

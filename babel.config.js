@@ -3,23 +3,15 @@ module.exports = {
   env: {
     development: {
       presets: ['@babel/preset-env', '@babel/preset-react'],
-      plugins: [
-        'react-refresh/babel',
-        'styled-components',
-      ],
+      plugins: ['react-refresh/babel', 'styled-components'],
     },
     production: {
       presets: ['@babel/preset-env', '@babel/preset-react'],
-      plugins: [
-        'styled-components',
-      ],
+      plugins: ['styled-components'],
     },
     test: {
       presets: ['@babel/preset-env', '@babel/preset-react'],
-      plugins: [
-        'react-refresh/babel',
-        'styled-components',
-      ],
+      plugins: ['react-refresh/babel', 'styled-components'],
     },
   },
 };
